@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 // 2. Updated Bot Token
-const BOT_TOKEN = "8873014697:AAGBkyoi4fW8ZpV9vrp8ThcH-XUZvCWtM64";
+const BOT_TOKEN = "8665184180:AAF0RiC4n6McbVMYoytHundeET1Zx1BkjWk";
 
 function getExactDate() {
     return new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true });
