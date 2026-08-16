@@ -2,15 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get, set, update, runTransaction, increment } from "firebase/database";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-Const firebaseConfig = {
-  apiKey: "AIzaSyCfBjjw7x0wkry5rNPrhYEuOm8wLKSoK9w",
-  authDomain: "gateway-6d98f.firebaseapp.com",
-  databaseURL: "https://gateway-6d98f-default-rtdb.firebaseio.com",
-  projectId: "gateway-6d98f",
-  storageBucket: "gateway-6d98f.firebasestorage.app",
-  messagingSenderId: "977584333857",
-  appId: "1:977584333857:web:1ee42b7566296e90dfaf60",
-  measurementId: "G-LP2LZ07VNR"
+const firebaseConfig = {
+  apiKey: "AIzaSyCfBjjw7x0wkry5rNPrhYEuOm8wLKSoK9w",
+  authDomain: "gateway-6d98f.firebaseapp.com",
+  databaseURL: "https://gateway-6d98f-default-rtdb.firebaseio.com",
+  projectId: "gateway-6d98f",
+  storageBucket: "gateway-6d98f.firebasestorage.app",
+  messagingSenderId: "977584333857",
+  appId: "1:977584333857:web:1ee42b7566296e90dfaf60",
+  measurementId: "G-LP2LZ07VNR"
 };
 
 const app = initializeApp(firebaseConfig);
