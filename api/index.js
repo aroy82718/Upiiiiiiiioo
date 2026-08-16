@@ -47,7 +47,7 @@ export default async function handler(req, res) {
 
         // REDIRECT FIX: If someone visits the API URL without any valid parameters, redirect to the home page.
         if (req.method === 'GET' && !req.query.key && !req.query.token && !req.query.tguserid && !req.query.transaction && req.query.leaderboard === undefined) {
-            return res.redirect(302, 'http://ng-wallet-pn77.vercel.app');
+            return res.redirect(302, 'http://tgpay.vercel.app');
         }
 
         // ==========================================
