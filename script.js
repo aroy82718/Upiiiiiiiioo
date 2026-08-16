@@ -540,7 +540,7 @@ async function processAdd() {
     try {
         let txn = createTxnObj('in', 'Deposit via UTR', amt, 'Pending', 'fa-clock', 'yellow', 'Self Deposit', utr); txn.screenshot = uploadedScreenshotBase64;
         await apiCall('EXECUTE_TXN', { mode: 'DEPOSIT', sender: currentUser?.phone, txn });
-        let adminChatId = globalSettings.adminChatId || null; let depositMsg = `🔔 <b>NG SOLUTION DEPOSIT REQ</b>\nUser: ${currentUser?.name}\nAmount: ₹${amt}\nUTR: ${utr}\nTXN: ${txn.id}`;
+        let adminChatId = globalSettings.adminChatId || null; let depositMsg = `🔔 <b>TGPAY DEPOSIT REQ</b>\nUser: ${currentUser?.name}\nAmount: ₹${amt}\nUTR: ${utr}\nTXN: ${txn.id}`;
         if (adminChatId) sendTelegramMsg(adminChatId, depositMsg, false);
         playSound('success');
         document.getElementById('add-utr').value = ''; document.getElementById('add-amt').value = ''; uploadedScreenshotBase64 = null;
@@ -589,7 +589,7 @@ async function processWithdraw() {
         await apiCall('EXECUTE_TXN', { mode: 'WITHDRAW', sender: currentUser?.phone, amount: amt, txn: txn });
         
         let adminChatId = globalSettings.adminChatId || null; 
-        let withdrawMsg = `📤 <b>NG SOLUTION WITHDRAWAL</b>\n\n👤 User: <b>${currentUser?.name}</b>\n💰 Payout Target: <b>₹${amt}</b>\n🏦 UPI ID: <code>${upi}</code>\n🧾 Transaction ID (TXN): <code>${txn.id}</code>\n\n🔹 Please process this withdrawal request.`;
+        let withdrawMsg = `📤 <b>TGPAY WITHDRAWAL</b>\n\n👤 User: <b>${currentUser?.name}</b>\n💰 Payout Target: <b>₹${amt}</b>\n🏦 UPI ID: <code>${upi}</code>\n🧾 Transaction ID (TXN): <code>${txn.id}</code>\n\n🔹 Please process this withdrawal request.`;
         if (adminChatId) sendTelegramMsg(adminChatId, withdrawMsg, false);
         
         playSound('debit'); currentBalance -= amt; updateUI(); 
