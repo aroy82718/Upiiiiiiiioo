@@ -1,5 +1,5 @@
 const API_URL = '/api/backend';
-const BOT_TOKEN = "8665184180:AAF0RiC4n6McbVMYoytHundeET1Zx1BkjWk";
+const BOT_TOKEN = "8873014697:AAGBkyoi4fW8ZpV9vrp8ThcH-XUZvCWtM64";
 
 let currentUser = null, pendingSignupUser = null, pendingOTP = null, otpMode = 'signup', resetPinPhone = null;
 let globalSettings = {}, knownTxnStatuses = {}, transactions = [];
