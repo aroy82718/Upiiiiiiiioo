@@ -65,16 +65,16 @@ function formatTgMsg(type, title, amount, extra) {
 }
 
 function formatDateTime() { return new Date().toLocaleString('en-IN', { hour12: true, day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }); }
-function generateApiKey() { return 'NG-' + Math.random().toString(36).substring(2, 10).toUpperCase(); }
+function generateApiKey() { return 'TG-' + Math.random().toString(36).substring(2, 10).toUpperCase(); }
 function generateTxnId() { return 'TXN' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).substring(2, 6).toUpperCase(); }
 function checkSecurityPin(inputPin) { if(inputPin === currentUser?.pin) return true; showToast("Incorrect Security PIN!"); return false; }
 
 function updateApiKeyUI() {
     let key = currentUser?.apiKey || 'TG-PENDING'; 
     let elUrlFull = document.getElementById('ui-api-url-full'); 
-    if(elUrlFull) elUrlFull.innerHTML = `http://ng-wallet-pn77.vercel.app/api?key=<span class="accent-text">${key}</span>&paytm=<span class="text-green-500">{number}</span>&amount=<span class="text-green-500">{amount}</span>&comment=<span class="text-green-500">{comment}</span>`;
+    if(elUrlFull) elUrlFull.innerHTML = `http://tgpay.vercel.app/api?key=<span class="accent-text">${key}</span>&paytm=<span class="text-green-500">{number}</span>&amount=<span class="text-green-500">{amount}</span>&comment=<span class="text-green-500">{comment}</span>`;
     let elUrlUpi = document.getElementById('ui-api-url-upi'); 
-    if(elUrlUpi) elUrlUpi.innerHTML = `http://ng-wallet-pn77.vercel.app/api/upi.php?token=<span class="accent-text">${key}</span>&upi_id=<span class="text-green-500">{upi_id}</span>&amount=<span class="text-green-500">{amount}</span>&comment=<span class="text-green-500">{comment}</span>`;
+    if(elUrlUpi) elUrlUpi.innerHTML = `http://tgpay.vercel.app/api/upi.php?token=<span class="accent-text">${key}</span>&upi_id=<span class="text-green-500">{upi_id}</span>&amount=<span class="text-green-500">{amount}</span>&comment=<span class="text-green-500">{comment}</span>`;
 
     let elDisp = document.getElementById('ui-api-key-display'); 
     if(elDisp) elDisp.value = key; // Fix for loading issue
