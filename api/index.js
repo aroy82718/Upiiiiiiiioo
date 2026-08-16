@@ -144,7 +144,7 @@ export default async function handler(req, res) {
 
             // Send Telegram Alert
             if (adminData.tgUserId) {
-                let userMsg = `🏦 <b>NG SOLUTION API Withdrawal!</b>\nUPI: <code>${upi_id}</code>\nAmount: ₹${withdrawAmount}\nTxn ID: ${txnId}`;
+                let userMsg = `🏦 <b>TGPAY API Withdrawal!</b>\nUPI: <code>${upi_id}</code>\nAmount: ₹${withdrawAmount}\nTxn ID: ${txnId}`;
                 sendTelegramMsg(adminData.tgUserId, userMsg);
             }
 
@@ -176,7 +176,7 @@ export default async function handler(req, res) {
 
         // Verify the receiver exists
         const receiverSnap = await get(ref(db, "users/" + targetNumber));
-        if (!receiverSnap.exists()) return res.status(200).json({ status: "error", message: "Receiver account not found in NG SOLUTION." });
+        if (!receiverSnap.exists()) return res.status(200).json({ status: "error", message: "Receiver account not found in TGPAY." });
         
         let receiverData = receiverSnap.val() || {};
 
