@@ -142,7 +142,7 @@ async function processSignupStep1() {
         pendingSignupUser.phone = phone; pendingOTP = Math.floor(100000 + Math.random() * 900000).toString(); otpMode = 'signup';
         
         let btn = document.getElementById('btn-signup-otp'); btn.innerText = "SENDING..."; btn.disabled = true;
-        let success = await sendTelegramMsg(telegram, `🔐 Your OTP Code\n📲 OTP: <b>${pendingOTP}</b>\n🤖 @NG_WALLET_BOT`, false); btn.innerText = "SEND OTP TO TELEGRAM"; btn.disabled = false;
+        let success = await sendTelegramMsg(telegram, `🔐 Your OTP Code\n📲 OTP: <b>${pendingOTP}</b>\n🤖 @TGPAYWALLETROBOT`, false); btn.innerText = "SEND OTP TO TELEGRAM"; btn.disabled = false;
         if(success) { showToast("OTP Sent to Telegram!"); showAuthView('otp'); } else { alert("Could not send OTP. Start the @NG_WALLET_BOT first!"); }
     } catch(e) {}
 }
